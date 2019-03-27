@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    
+        <!--  ERROR PAGES-->
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error-pages/404-Error.html</location>
+    </error-page>
+
+    <error-page>
+        <error-code>400</error-code>
+        <location>/error-pages/400-Error.html</location>
+    </error-page>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error-pages/500-Error.html</location>
+    </error-page>
+    
+    <error-page>
+        <location>/error-pages/general-error.html</location>
+    </error-page>
+
+           <!--FILTERS FOR THE SERVLETS-->
+
+                <!--FACULTY-->
+    <filter>
+        <filter-name>FacultyFilter</filter-name>
+        <filter-class>filters.FacultyFilter</filter-class>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>FacultyFilter</filter-name>
+        <url-pattern>/faculty</url-pattern>
+    </filter-mapping>
+
+               <!--STUDENT-->
+    <filter>
+        <filter-name>StudentFilter</filter-name>
+        <filter-class>filters.StudentFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>StudentFilter</filter-name>
+        <url-pattern>/student</url-pattern>
+    </filter-mapping>
+
+              <!--SUBJECT-->
+
+    <filter>
+        <filter-name>SubjectFilter</filter-name>
+        <filter-class>filters.SubjectFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>SubjectFilter</filter-name>
+        <url-pattern>/subject</url-pattern>
+    </filter-mapping>
+
+                <!--UNIVERSITY-->
+
+    <filter>
+        <filter-name>UniversityFilter</filter-name>
+        <filter-class>filters.UniversityFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>UniversityFilter</filter-name>
+        <url-pattern>/university</url-pattern>
+    </filter-mapping>
+
+
+
+             <!-- SERVLETS MAPPING-->
+
+
+                    <!--STUDENT-->
+
+    <servlet>
+        <servlet-name>Student Servlet</servlet-name>
+        <servlet-class>servlets.StudentServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Student Servlet</servlet-name>
+        <url-pattern>/student</url-pattern>
+    </servlet-mapping>
+
+    <!--<servlet-mapping>
+        <servlet-name>Student Delete Servlet</servlet-name>
+        <url-pattern>/student/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Student Delete Servlet</servlet-name>
+        <servlet-class>servlets.StudentDeleteServlet</servlet-class>
+    </servlet>-->
+
+
+                      <!--FACULTY-->
+    <servlet>
+        <servlet-name>Faculty Servlet</servlet-name>
+        <servlet-class>servlets.FacultyServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Faculty Servlet</servlet-name>
+        <url-pattern>/faculty</url-pattern>
+    </servlet-mapping>
+
+
+    <!--<servlet>
+        <servlet-name>Faculty Delete Servlet</servlet-name>
+        <servlet-class>servlets.FacultyDeleteServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Faculty Delete Servlet</servlet-name>
+        <url-pattern>/faculty/delete</url-pattern>
+    </servlet-mapping>-->
+
+
+
+                    <!-- UNIVERSITY-->
+
+    <servlet>
+        <servlet-name>University Servlet</servlet-name>
+        <servlet-class>servlets.UniversityServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>University Servlet</servlet-name>
+        <url-pattern>/university</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>University Delete Servlet</servlet-name>
+        <servlet-class>servlets.UniversityDeleteServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>University Delete Servlet</servlet-name>
+        <url-pattern>/university/delete</url-pattern>
+    </servlet-mapping>
+
+                    <!--SUBJECT-->
+
+    <servlet>
+        <servlet-name>Subject Servlet</servlet-name>
+        <servlet-class>servlets.SubjectServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Subject Servlet</servlet-name>
+        <url-pattern>/subject</url-pattern>
+    </servlet-mapping>
+
+  <!--  <servlet>
+        <servlet-name>Subject Delete Servlet</servlet-name>
+        <servlet-class>servlets.SubjectDeleteServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Subject Delete Servlet</servlet-name>
+        <url-pattern>/subject/delete</url-pattern>
+    </servlet-mapping>-->
+
+
+                    <!--AJAX-->
+
+    <servlet>
+        <servlet-name>User Ajax</servlet-name>
+        <servlet-class>servlets.Ajax</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>User Ajax</servlet-name>
+        <url-pattern>/user/ajax</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
+
+
