@@ -11,6 +11,8 @@ import java.io.IOException;
  */
 public class Ajax extends HttpServlet {
 
+    private String name;
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         System.out.println("From Get method");
