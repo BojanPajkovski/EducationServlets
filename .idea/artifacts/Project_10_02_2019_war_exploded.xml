@@ -16,7 +16,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="C:\Users\User\Desktop\Project 10.02.2019\target/MANIFEST.MF" />
+        <element id="file-copy" path="C:\Users\User\Desktop\Education JSP AND SERVLET\target/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="Project 10.02.2019/web/Web" />
     </root>
