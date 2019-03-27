@@ -10,10 +10,7 @@ import java.io.IOException;
  * Created by User on 10.02.2019.
  */
 public class Ajax extends HttpServlet {
-
-    private int age;
-
-    private String name;
+    
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
