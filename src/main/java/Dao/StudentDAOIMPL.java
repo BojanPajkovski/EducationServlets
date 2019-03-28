@@ -32,6 +32,11 @@ public class StudentDAOIMPL {
             ex.printStackTrace();
         }
 
+        finally {
+
+            try { conn.close(); } catch (Exception e) { e.printStackTrace(); }
+        }
+
 
     }
 
@@ -59,8 +64,11 @@ public class StudentDAOIMPL {
 
         } catch (Exception ex) {
             ex.printStackTrace();
+        }
 
+        finally {
 
+            try { conn.close(); } catch (Exception e) { e.printStackTrace(); }
         }
     }
 
@@ -95,6 +103,11 @@ public class StudentDAOIMPL {
         }
         catch(Exception ex){
             ex.printStackTrace();
+        }
+
+        finally {
+
+            try { conn.close(); } catch (Exception e) { e.printStackTrace(); }
         }
 
     }
@@ -141,6 +154,11 @@ public class StudentDAOIMPL {
         catch(Exception ex){
             ex.printStackTrace();
         }
+
+        finally {
+
+            try { conn.close(); } catch (Exception e) { e.printStackTrace(); }
+        }
         return null;
     }
 
@@ -182,6 +200,11 @@ public class StudentDAOIMPL {
         catch(Exception ex){
             ex.printStackTrace();
         }
+
+        finally {
+
+            try { conn.close(); } catch (Exception e) { e.printStackTrace(); }
+        }
         return students;
 
     }
@@ -222,6 +245,11 @@ public class StudentDAOIMPL {
         }
         catch(Exception ex){
             ex.printStackTrace();
+        }
+
+        finally {
+
+            try { conn.close(); } catch (Exception e) { e.printStackTrace(); }
         }
         return students;
 
@@ -265,6 +293,11 @@ public class StudentDAOIMPL {
         }
         catch(Exception ex){
             ex.printStackTrace();
+        }
+
+        finally {
+
+            try { conn.close(); } catch (Exception e) { e.printStackTrace(); }
         }
         return students;
 

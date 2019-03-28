@@ -34,6 +34,11 @@ public class SubjectDAOIMPL {
             ex.printStackTrace();
         }
 
+        finally {
+
+            try { conn.close(); } catch (Exception e) { e.printStackTrace(); }
+        }
+
 
     }
 
@@ -59,8 +64,11 @@ public class SubjectDAOIMPL {
 
         } catch (Exception ex) {
             ex.printStackTrace();
+        }
 
+        finally {
 
+            try { conn.close(); } catch (Exception e) { e.printStackTrace(); }
         }
     }
 
@@ -91,6 +99,11 @@ public class SubjectDAOIMPL {
         }
         catch(Exception ex){
             ex.printStackTrace();
+        }
+
+        finally {
+
+            try { conn.close(); } catch (Exception e) { e.printStackTrace(); }
         }
 
     }
@@ -134,6 +147,11 @@ public class SubjectDAOIMPL {
         catch(Exception ex){
             ex.printStackTrace();
         }
+
+        finally {
+
+            try { conn.close(); } catch (Exception e) { e.printStackTrace(); }
+        }
         return null;
     }
 
@@ -172,6 +190,11 @@ public class SubjectDAOIMPL {
         }
         catch(Exception ex){
             ex.printStackTrace();
+        }
+
+        finally {
+
+            try { conn.close(); } catch (Exception e) { e.printStackTrace(); }
         }
         return subjects;
 
@@ -212,6 +235,11 @@ public class SubjectDAOIMPL {
         }catch(Exception e){
 
             e.printStackTrace();
+        }
+
+        finally {
+
+            try { conn.close(); } catch (Exception e) { e.printStackTrace(); }
         }
 
         return subjects;
@@ -255,6 +283,11 @@ public class SubjectDAOIMPL {
         }catch(Exception e){
 
             e.printStackTrace();
+        }
+
+        finally {
+
+            try { conn.close(); } catch (Exception e) { e.printStackTrace(); }
         }
 
         return subjects;
