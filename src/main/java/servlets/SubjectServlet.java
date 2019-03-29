@@ -32,39 +32,26 @@ public class SubjectServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String action = request.getParameter("action");
-
         String forward = "";
-
         if(action.equalsIgnoreCase("delete")){
-
             int subjectId = Integer.parseInt(request.getParameter("id"));
             subjectDAOIMPL.delete(subjectId);
             forward = LIST_SUBJECTS;
             request.setAttribute("listAllSubjects", subjectDAOIMPL.getAll());
-        }
-
-        else if(action.equalsIgnoreCase("edit")){
+        } else if(action.equalsIgnoreCase("edit")){
             forward = INSERT_OR_EDIT;
             int subjectId = Integer.parseInt(request.getParameter("id"));
             Subject subject = subjectDAOIMPL.getById(subjectId);
             request.setAttribute("subject", subject); // KAKO go predavame subject ??
-        }
-
-        else if (action.equalsIgnoreCase("listSubject")){
+        } else if (action.equalsIgnoreCase("listSubject")){
             forward = LIST_SUBJECTS;
             request.setAttribute("listAllSubjects", subjectDAOIMPL.getAll());
-        }
-
-        else if (action.equalsIgnoreCase("listSubjectByCredits")){
+        } else if (action.equalsIgnoreCase("listSubjectByCredits")){
             forward = LIST_SUBJECTS;
             request.setAttribute("listAllSubjects", subjectDAOIMPL.getSubjectsByCredits());
-        }
-
-        else if (action.equalsIgnoreCase("add")){
+        } else if (action.equalsIgnoreCase("add")){
             forward = INSERT_OR_EDIT;
-        }
-
-        else if (action.equalsIgnoreCase("search")){
+        } else if (action.equalsIgnoreCase("search")){
             forward = LIST_SUBJECTS;
             String name = request.getParameter("name");
             int credits = Integer.parseInt(request.getParameter("credits"));
@@ -77,21 +64,16 @@ public class SubjectServlet extends HttpServlet {
                  forward = NEVER_EMPTY;
                 request.setAttribute("message", "Invalid params");
 
-
             }
-
             List<Subject> subjects = subjectDAOIMPL.searchByNameAndCredits(name,credits );
             request.setAttribute("listAllSubjects", subjects);
 
-        }
-
-        else {
+        } else {
             forward = INSERT_OR_EDIT;
-        } // Kako da dodame nov predmet ??
+        }
 
         RequestDispatcher view = request.getRequestDispatcher(forward);
         view.forward(request, response);
-
 
     }
 
@@ -129,56 +111,6 @@ public class SubjectServlet extends HttpServlet {
 
         // 6. Send List<Faculty> as JSON to client
         mapper.writeValue(response.getOutputStream(), subjects);
-
-
     }
-       /* String forward = "";
-
-        SubjectDAOIMPL subjectDAOIMPL1 = new SubjectDAOIMPL();
-
-        String subjectName = request.getParameter("name");
-        int subjectCredits = Integer.parseInt(request.getParameter("credits"));
-        String subjectSemestar =request.getParameter("semestar");
-
-        if((request.getParameter("name")== null||request.getParameter("name")== "") ||
-
-                (request.getParameter("credits")== null||request.getParameter("credits")== "") ||
-
-                (request.getParameter("semestar")== null||request.getParameter("semestar")== "")) {
-
-                     System.out.println("Morate da gi popolnite site polinja da izvrshite update ili insert");
-
-                        forward = NEVER_EMPTY;
-
-            request.setAttribute("message", "The fields should not be empty");
-            request.getRequestDispatcher(forward).forward(request,response);
-
-           return;
-
-
-
-
-
-        }
-
-        Subject subject = new Subject(subjectName,subjectCredits,subjectSemestar);
-
-        if(request.getParameter("id")!= null && request.getParameter("id") !=""  ){
-
-            Long subjectId =Long.parseLong(request.getParameter("id")) ;
-            subject.setId(Long.parseLong(request.getParameter("id")));
-            subjectDAOIMPL.update(subject);
-            forward = SUCCESS;
-            request.setAttribute("message", "Successfully updated subject");
-            request.getRequestDispatcher(forward).forward(request,response);
-        } else {
-            subjectDAOIMPL.insert(subject);
-            forward = SUCCESS;
-            request.setAttribute("message", "Successfully inserted subject");
-            request.getRequestDispatcher(forward).forward(request,response);
-        }
-
-    }*/
-
 }
 

@@ -95,17 +95,6 @@
         <url-pattern>/student</url-pattern>
     </servlet-mapping>
 
-    <!--<servlet-mapping>
-        <servlet-name>Student Delete Servlet</servlet-name>
-        <url-pattern>/student/delete</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>Student Delete Servlet</servlet-name>
-        <servlet-class>servlets.StudentDeleteServlet</servlet-class>
-    </servlet>-->
-
-
                       <!--FACULTY-->
     <servlet>
         <servlet-name>Faculty Servlet</servlet-name>
@@ -116,17 +105,6 @@
         <servlet-name>Faculty Servlet</servlet-name>
         <url-pattern>/faculty</url-pattern>
     </servlet-mapping>
-
-
-    <!--<servlet>
-        <servlet-name>Faculty Delete Servlet</servlet-name>
-        <servlet-class>servlets.FacultyDeleteServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>Faculty Delete Servlet</servlet-name>
-        <url-pattern>/faculty/delete</url-pattern>
-    </servlet-mapping>-->
 
 
 
@@ -162,29 +140,6 @@
     <servlet-mapping>
         <servlet-name>Subject Servlet</servlet-name>
         <url-pattern>/subject</url-pattern>
-    </servlet-mapping>
-
-  <!--  <servlet>
-        <servlet-name>Subject Delete Servlet</servlet-name>
-        <servlet-class>servlets.SubjectDeleteServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>Subject Delete Servlet</servlet-name>
-        <url-pattern>/subject/delete</url-pattern>
-    </servlet-mapping>-->
-
-
-                    <!--AJAX-->
-
-    <servlet>
-        <servlet-name>User Ajax</servlet-name>
-        <servlet-class>servlets.Ajax</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>User Ajax</servlet-name>
-        <url-pattern>/user/ajax</url-pattern>
     </servlet-mapping>
 
 

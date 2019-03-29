@@ -17,7 +17,6 @@ public class UniversityDeleteServlet extends HttpServlet {
         UniversityDAOIMPL universityDAOIMPL = new UniversityDAOIMPL();
         int id = Integer.parseInt(request.getParameter("id"));
         universityDAOIMPL.delete(id);
-        System.out.println("From University delete servlet");
 
     }
 }
