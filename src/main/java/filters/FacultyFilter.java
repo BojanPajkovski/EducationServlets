@@ -27,7 +27,6 @@ public class FacultyFilter implements Filter {
                 filterChain.doFilter(servletRequest,servletResponse);
             }
         }
-
     }
 
     @Override

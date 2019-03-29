@@ -19,25 +19,16 @@ public class UniversityServlet extends HttpServlet {
         if(request.getParameter("id")!= null && request.getParameter("id")!=""){
 
             UniversityDAOIMPL universityDAOIMPL = new UniversityDAOIMPL();
-
-            University university = new University();
-
+            University university;
             university = universityDAOIMPL.getById(Integer.parseInt(request.getParameter("id")));
-
-            System.out.println("Univerzitetot ima id");
-
             request.setAttribute("id", university.getId());
             request.setAttribute("name", university.getName());
             request.setAttribute("description", university.getDescription());
             request.setAttribute("location", university.getLocation());
-
-
             request.getRequestDispatcher("/resources/university/University.jsp").forward(request,response);
-
         }
 
         else{
-
             request.getRequestDispatcher("/resources/university/University.jsp").forward(request,response);
         System.out.println("Nema id");
 
@@ -65,9 +56,7 @@ public class UniversityServlet extends HttpServlet {
         } else{
             universityDAOIMPL.insert(university);
         }
-
         request.getRequestDispatcher("/resources/university/University.jsp").forward(request,response);
-
     }
 
 }
